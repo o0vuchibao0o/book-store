@@ -1,4 +1,4 @@
-package com.vuchibao.catalog_service;
+package com.vuchibao.bookstore.catalog;
 
 import org.springframework.boot.SpringApplication;
 

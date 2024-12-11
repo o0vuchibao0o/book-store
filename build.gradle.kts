@@ -39,6 +39,8 @@ subprojects {
     dependencies {
         compileOnly("org.projectlombok:lombok")
         annotationProcessor("org.projectlombok:lombok")
+        // https://mvnrepository.com/artifact/org.apache.commons/commons-text
+        implementation("org.apache.commons:commons-text:1.12.0")
     }
 
     tasks.withType<Test> {
