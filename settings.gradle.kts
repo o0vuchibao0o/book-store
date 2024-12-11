@@ -1,3 +1,3 @@
 rootProject.name = "book-store"
 
-include("services:catalog-service")
+include("catalog-service")
