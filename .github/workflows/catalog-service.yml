@@ -3,7 +3,7 @@ name: Catalog Service
 on:
   push:
     paths:
-      - catalog-service/**
+      - services/catalog-service/**
     branches:
       - "**"
 
