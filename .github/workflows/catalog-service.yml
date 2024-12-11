@@ -2,8 +2,8 @@ name: Catalog Service
 
 on:
   push:
-#    paths:
-#      - services/catalog-service/**
+    paths:
+      - services/catalog-service/**
     branches:
       - "**"
 
@@ -37,4 +37,4 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Build with gradle
-        run: ./gradlew build
+        run: ./gradlew :services:catalog-service:build
