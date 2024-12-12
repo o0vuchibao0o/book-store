@@ -1,3 +1,5 @@
+import org.springframework.boot.gradle.tasks.bundling.BootBuildImage
+
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-actuator")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
@@ -19,4 +21,7 @@ dependencies {
     testImplementation("org.testcontainers:postgresql")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
-
+tasks.named<BootBuildImage>("bootBuildImage") {
+    val dockerNamespace = rootProject.ext["dockerNamespace"] as String
+    imageName.set("docker.io/${dockerNamespace}/${rootProject.name}-${project.name}")
+}
