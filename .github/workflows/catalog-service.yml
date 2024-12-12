@@ -45,4 +45,4 @@ jobs:
 
       - if: ${{ github.ref == 'refs/heads/main' }}
         name: Publish Docker Image
-        run: docker push docker.io/vuchibao/book-store-catalog-service:latest
+        run: docker push docker.io/${{ secrets.DOCKERHUB_USERNAME }}/book-store-catalog-service:latest

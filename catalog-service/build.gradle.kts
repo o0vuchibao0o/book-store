@@ -22,6 +22,6 @@ dependencies {
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 tasks.named<BootBuildImage>("bootBuildImage") {
-    val dockerNamespace = rootProject.ext["dockerNamespace"] as String
-    imageName.set("docker.io/${dockerNamespace}/${rootProject.name}-${project.name}")
+    val dockerHubUsername = rootProject.ext["dockerHubUsername"] as String
+    imageName.set("docker.io/${dockerHubUsername}/${rootProject.name}-${project.name}")
 }

@@ -15,7 +15,7 @@ allprojects {
 
     ext {
         set("springCloudVersion", "2024.0.0")
-        set("dockerNamespace", "vuchibao")
+        set("dockerHubUsername", "o0vuchibao0o")
     }
 }
 
