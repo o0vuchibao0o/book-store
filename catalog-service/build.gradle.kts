@@ -21,6 +21,7 @@ dependencies {
     testImplementation("org.testcontainers:postgresql")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
+
 tasks.named<BootBuildImage>("bootBuildImage") {
     val dockerHubUsername = rootProject.ext["dockerHubUsername"] as String
     imageName.set("docker.io/${dockerHubUsername}/${rootProject.name}-${project.name}")

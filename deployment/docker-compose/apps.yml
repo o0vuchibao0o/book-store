@@ -1,7 +1,7 @@
 name: "book-store"
 services:
   catalog-service:
-    image: docker.io/vuchibao/book-store-catalog-service:latest
+    image: docker.io/o0vuchibao0o/book-store-catalog-service:latest
     container_name: catalog-service
     environment:
       - SPRING_PROFILES_ACTIVE=docker

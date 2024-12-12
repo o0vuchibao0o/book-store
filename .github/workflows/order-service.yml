@@ -1,9 +1,9 @@
-name: Catalog Service
+name: Order Service
 
 on:
   push:
     paths:
-      - catalog-service/**
+      - order-service/**
     branches:
       - "**"
 
@@ -12,12 +12,7 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     env:
-      DOCKER_IMAGE_NAME: docker.io/${{ secrets.DOCKERHUB_USERNAME }}/book-store-catalog-service:latest
-    #    env:
-    #      working-directory: ./catalog-service
-    #    defaults:
-    #      run:
-    #        working-directory: ${{ env.working-directory }}
+      DOCKER_IMAGE_NAME: docker.io/${{ secrets.DOCKERHUB_USERNAME }}/book-store-order-service:latest
     steps:
       - uses: actions/checkout@v4
 
@@ -32,7 +27,7 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Build with gradle
-        run: ./gradlew :catalog-service:build
+        run: ./gradlew :order-service:build
 
       - if: ${{ github.ref == 'refs/heads/main' }}
         name: Login to Docker Hub
@@ -43,7 +38,7 @@ jobs:
 
       - if: ${{ github.ref == 'refs/heads/main' }}
         name: Build Docker Image
-        run: ./gradlew :catalog-service:bootBuildImage
+        run: ./gradlew :order-service:bootBuildImage
 
       - if: ${{ github.ref == 'refs/heads/main' }}
         name: Publish Docker Image
